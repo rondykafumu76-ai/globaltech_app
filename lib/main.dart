@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:globaltech_app/Screens/Splash/animated_splash_screen.dart';
 import 'package:globaltech_app/Screens/home/home_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   //init firebase
@@ -20,12 +22,11 @@ class MyApp extends StatelessWidget {
       title: 'Globaltech Team',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-      ),
+        textTheme: GoogleFonts.poppinsTextTheme()),
       home: Banner(
           message: "Fuel",
           location: BannerLocation.topEnd,
-        child: const HomeScreen(),
+        child: const AnimatedSplashScreen(),
       ),
     );
   }
