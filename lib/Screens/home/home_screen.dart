@@ -13,7 +13,9 @@ class _HomeScreenState extends State<HomeScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(),
-      body: Container(),
+      body: Container(
+        child: Text("Splash Screen"),
+      ),
     );
   }
 }

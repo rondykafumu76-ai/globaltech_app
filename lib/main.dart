@@ -1,15 +1,16 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:globaltech_app/Screens/Splash/animated_splash_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:globaltech_app/Screens/home/home_screen.dart';
+import 'package:globaltech_app/Screens/login/login_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   //init firebase
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding widgetsBinding =  WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp();
 
-  runApp(const MyApp());
+  runApp( ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       home: Banner(
           message: "Fuel",
           location: BannerLocation.topEnd,
-        child: const AnimatedSplashScreen(),
+        child: const LoginScreen(),
       ),
     );
   }
