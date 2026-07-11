@@ -5,6 +5,8 @@ import 'package:globaltech_app/Screens/home/home_screen.dart';
 import 'package:globaltech_app/Screens/login/login_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'config/router/app_router_config.dart';
+
 void main() {
   //init firebase
   WidgetsBinding widgetsBinding =  WidgetsFlutterBinding.ensureInitialized();
@@ -27,6 +29,7 @@ class MyApp extends StatelessWidget {
       home: Banner(
           message: "Fuel",
           location: BannerLocation.topEnd,
+
         child: const LoginScreen(),
       ),
     );
