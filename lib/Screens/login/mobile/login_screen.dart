@@ -4,6 +4,9 @@ import 'package:globaltech_app/config/router/app_router_constants.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../wigdets/Textfield/textfiled_custom.dart';
+import '../../../wigdets/button/material_wigdet_button.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -78,30 +81,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 15,),
-                  MaterialButton(
-                    onPressed: (){
-                      print("hello");
-
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const HomeScreen(),
-                        ),
-                      );
-
-                    },
-                    child: Container(
-                      height: size.height * 0.063,
-                      width: size.width * 0.86,
-
-                      decoration: BoxDecoration(
-                          color: Colors.blue,
-                        borderRadius: BorderRadius.all(Radius.circular(5))
-                      ),
-                      child: Center(
-                          child: Text("Se connecter",style: TextStyle(color: Colors.white),)
-                      ),
-                    ),
+                  ButtonWidgetMaterial(
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomeScreen(), // Remplace par le nom de ton widget
+                          ),
+                        );
+                      },
+                    title: "Se Conncter",
+                    sizeHeight: null, sizeWidget: null,
                   ),
 
                   //
@@ -113,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Text("Vous n'avez pas de compte?"),
                         TextButton(
                             onPressed: (){},
-                            child: Text("Contactez l'administrateur"))
+                             child: Text("Contactez l'administrateur"))
                       ],
                     ),
                   )
@@ -140,27 +130,5 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 }
 
-class TextfiledCustom extends StatelessWidget {
-  const TextfiledCustom({super.key, required this.controller, required this.hintTextName,required this.icon});
 
-  final TextEditingController controller;
-  final String hintTextName;
-  final Icon icon;
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return TextField(
-      controller: controller,
-      decoration: InputDecoration(
-          border: OutlineInputBorder(),
-          fillColor: Colors.blue,
-          hintText: hintTextName,
-          suffixIcon: IconButton(onPressed: (){
-            controller.clear();
-          }, icon: icon)
-      ),
-    );
-  }
-}
 

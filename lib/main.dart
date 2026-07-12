@@ -5,6 +5,7 @@ import 'package:globaltech_app/Screens/home/mobile/home_screen.dart';
 import 'package:globaltech_app/Screens/login/mobile/login_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'Screens/login/login.dart';
 import 'config/router/app_router_config.dart';
 
 void main() {
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
           message: "Fuel",
           location: BannerLocation.topEnd,
 
-        child: const LoginScreen(),
+        child: const Login(),
       ),
     );
   }
