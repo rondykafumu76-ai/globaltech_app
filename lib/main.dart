@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:globaltech_app/Screens/home/home_screen.dart';
-import 'package:globaltech_app/Screens/login/login_screen.dart';
+import 'package:globaltech_app/Screens/home/mobile/home_screen.dart';
+import 'package:globaltech_app/Screens/login/mobile/login_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'config/router/app_router_config.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:globaltech_app/Screens/home/home_screen.dart';
+import 'package:globaltech_app/Screens/home/mobile/home_screen.dart';
 import 'package:globaltech_app/config/router/app_router_constants.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -66,11 +66,13 @@ class _LoginScreenState extends State<LoginScreen> {
                         TextfiledCustom(
                           controller: _controllerEmail,
                           hintTextName: "Email...",
+                          icon: Icon(Icons.clear),
                         ),
                         const SizedBox(height: 15,),
                         TextfiledCustom(
                           controller: _controllerPassWord,
                           hintTextName: "Mot de passe",
+                          icon: Icon(Icons.remove_red_eye),
                         ),
                       ],
                     ),
@@ -139,10 +141,11 @@ class _LoginScreenState extends State<LoginScreen> {
 }
 
 class TextfiledCustom extends StatelessWidget {
-  const TextfiledCustom({super.key, required this.controller, required this.hintTextName});
+  const TextfiledCustom({super.key, required this.controller, required this.hintTextName,required this.icon});
 
   final TextEditingController controller;
   final String hintTextName;
+  final Icon icon;
 
   @override
   Widget build(BuildContext context) {
@@ -155,7 +158,7 @@ class TextfiledCustom extends StatelessWidget {
           hintText: hintTextName,
           suffixIcon: IconButton(onPressed: (){
             controller.clear();
-          }, icon: Icon(Icons.clear))
+          }, icon: icon)
       ),
     );
   }
